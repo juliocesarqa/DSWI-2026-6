@@ -1,4 +1,7 @@
-﻿namespace cibertec_demo.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.Xml.Linq;
+
+namespace cibertec_demo.Models
 {
     public class Usuario
     {
@@ -19,6 +22,9 @@
         [StringLength(50, MinimumLength = 4, ErrorMessage = "La contraseña debe tener entre 4 y 50 caracteres")]
         [DataType(DataType.Password)]
         [Display(Name = "Contraseña")]
-        public string contraseña { get; set; }
+        public string clave { get; set; }
+
+        [Required(ErrorMessage = "La fecha es obligatoria")]
+        public DateTime fechaRegistro { get; set; }
     }
 }
